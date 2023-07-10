@@ -1,48 +1,31 @@
 <template>
   <div v-if="isOpen" class="alert" :class="`alert-${variant}`">
-    {{ message }}
+    <slot></slot>
     <button type="button" class="close" @click="closeAlert">&times;</button>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   props: {
-    message: {
-      type: String,
-      required: true
-    },
     variant: {
       type: String,
       default: "primary"
     }
   },
-  data() {
-    return {
-      isOpen: true
+  setup(props) {
+    const isOpen = ref(true);
+
+    const closeAlert = () => {
+      isOpen.value = false;
     };
-  },
-  methods: {
-    closeAlert() {
-      this.isOpen = false;
-    }
+
+    return {
+      isOpen,
+      closeAlert
+    };
   }
 };
 </script>
-
-<style>
-.alert {
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.alert-primary {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.alert-danger {
-  background-color: #dc3545;
-  color: #fff;
-}
-</style>

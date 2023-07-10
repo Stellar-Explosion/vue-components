@@ -1,18 +1,14 @@
 <template>
   <div>
-    <Button label="Кнопка" variant="danger" />
-    <Alert message="Это предупреждение" variant="warning" />
+    <Button variant="primary">
+      Кнопка
+    </Button>
+    <Alert variant="primary">
+      Это предупреждение
+    </Alert>
   </div>
 </template>
 
 <script>
-import Button from "./components/Button.vue";
-import Alert from "./components/Alert.vue";
 
-export default {
-  components: {
-    Button,
-    Alert,
-  }
-};
 </script>
