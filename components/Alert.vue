@@ -1,6 +1,6 @@
 <template>
   <div v-if="isOpen" class="alert" :class="`alert-${variant}`">
-    <slot></slot>
+    <slot>Это предупреждение</slot>
     <button type="button" class="close" @click="closeAlert">&times;</button>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
       default: "primary"
     }
   },
-  setup(props) {
+  setup() {
     const isOpen = ref(true);
 
     const closeAlert = () => {

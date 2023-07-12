@@ -1,11 +1,10 @@
 <template>
   <button class="btn" :class="`btn-${variant}`">
-    <slot></slot>
+    <slot>Кнопка</slot>
   </button>
 </template>
 
 <script>
-import { ref } from 'vue';
 
 export default {
   props: {
@@ -15,7 +14,7 @@ export default {
     }
   },
   setup(props) {
-    const variant = ref(props.variant);
+    const variant = props.variant;
 
     return {
       variant
