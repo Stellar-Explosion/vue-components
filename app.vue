@@ -1,11 +1,10 @@
 <template>
   <div>
-    <Button variant="primary">
-      Кнопка
-    </Button>
-    <Alert variant="primary">
-      Это предупреждение
-    </Alert>
+    <Button variant="secondary"></Button>
+    <Alert></Alert>
+  </div>
+  <div>
+    <Card image="/no-photo.jpg"></Card>
   </div>
 </template>
 
