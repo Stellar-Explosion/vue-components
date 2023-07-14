@@ -2,9 +2,17 @@
   <div>
     <Button variant="secondary"></Button>
     <Alert></Alert>
-  </div>
-  <div>
-    <Card image="/no-photo.jpg"></Card>
+    <Card image="/no-photo.jpg">
+      <template v-slot:title>
+        <CardTitle>Заголовок</CardTitle>
+      </template>
+      <template v-slot:text>
+        <CardBody>Текст</CardBody>
+      </template>
+      <template v-slot:button>
+        <CardActions>Кнопка</CardActions>
+      </template>
+    </Card>
   </div>
 </template>
 
